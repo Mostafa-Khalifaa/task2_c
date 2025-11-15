@@ -45,6 +45,9 @@ int getKeyPress(void) {
     // Handle special keys (arrow keys, etc.)
     if (ch == 0 || ch == 224) {
         ch = _getch();
+        // Swap arrow keys: RIGHT->DOWN, LEFT->UP
+        if (ch == KEY_RIGHT) return KEY_DOWN;
+        if (ch == KEY_LEFT) return KEY_UP;
         return ch;
     }
 
@@ -58,10 +61,10 @@ int getKeyPress(void) {
         if (next == '[') {
             int arrow = getchar();
             switch (arrow) {
-                case 'A': return KEY_UP;
-                case 'B': return KEY_DOWN;
-                case 'C': return KEY_RIGHT;
-                case 'D': return KEY_LEFT;
+                case 'A': return KEY_UP;      // Up arrow
+                case 'B': return KEY_DOWN;    // Down arrow
+                case 'C': return KEY_DOWN;    // Right arrow -> DOWN
+                case 'D': return KEY_UP;      // Left arrow -> UP
                 case 'H': return KEY_HOME;
             }
         } else {
