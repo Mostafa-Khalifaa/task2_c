@@ -2,12 +2,15 @@
 #include "platform.h"
 #include <stdio.h>
 
-#ifndef _WIN32
-#include <termios.h>
-#include <unistd.h>
+#ifdef _WIN32
+    #include <conio.h>
+#endif
 
-static struct termios oldTermios;
-static struct termios newTermios;
+#ifndef _WIN32
+    #include <termios.h>
+    #include <unistd.h>
+    static struct termios oldTermios;
+    static struct termios newTermios;
 #endif
 
 void initInput(void) {
@@ -24,6 +27,7 @@ void initInput(void) {
     // Set new settings
     tcsetattr(STDIN_FILENO, TCSANOW, &newTermios);
 #endif
+    // Windows doesn't need initialization
 }
 
 void restoreInput(void) {
@@ -31,11 +35,11 @@ void restoreInput(void) {
     // Restore original terminal settings
     tcsetattr(STDIN_FILENO, TCSANOW, &oldTermios);
 #endif
+    // Windows doesn't need restoration
 }
 
 int getKeyPress(void) {
 #ifdef _WIN32
-    #include <conio.h>
     int ch = _getch();
 
     // Handle special keys (arrow keys, etc.)

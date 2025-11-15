@@ -157,3 +157,69 @@
 	<stdio.h>
 	<string.h>
 
+1763202922 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\color.c
+	"color.h"
+	"platform.h"
+	<stdio.h>
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\color.h
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\platform.h
+	<windows.h>
+	<unistd.h>
+	<stdio.h>
+
+1763202922 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\cursor.c
+	"cursor.h"
+	"platform.h"
+	<stdio.h>
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\cursor.h
+
+1763202922 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\draw.c
+	"draw.h"
+	"cursor.h"
+	"color.h"
+	"screen.h"
+	<stdio.h>
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\draw.h
+	"color.h"
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\screen.h
+
+1763203274 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\input.c
+	"input.h"
+	"platform.h"
+	<stdio.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\input.h
+
+1763203391 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"screen.h"
+	"input.h"
+	"menu.h"
+
+1763202922 c:\users\mosta\onedrive\سطح المكتب\task2_c\menu.h
+	"color.h"
+
+1763202922 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\menu.c
+	"menu.h"
+	"screen.h"
+	"draw.h"
+	"input.h"
+	"cursor.h"
+	<stdio.h>
+	<string.h>
+
+1763202922 source:c:\users\mosta\onedrive\سطح المكتب\task2_c\screen.c
+	"screen.h"
+	"platform.h"
+	<stdio.h>
+	<stdlib.h>
+
