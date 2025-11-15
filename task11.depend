@@ -5,12 +5,10 @@
 	"draw.h"
 	"screen.h"
 
-1763139093 
+1763138630 
 
 1763138630 c:\users\mosta\onedrive\سطح المكتب\task11\draw.h
 	"color.h"
-
-1763138630 
 
 1763138630 c:\users\mosta\onedrive\سطح المكتب\task11\color.h
 
@@ -92,4 +90,70 @@
 	"platform.h"
 	<stdio.h>
 	<stdlib.h>
+
+1763102630 source:/home/mostafa/Downloads/task2/color.c
+	"color.h"
+	"platform.h"
+	<stdio.h>
+
+1763102630 /home/mostafa/Downloads/task2/color.h
+
+1763103348 /home/mostafa/Downloads/task2/platform.h
+	<windows.h>
+	<unistd.h>
+	<stdio.h>
+
+1763102630 source:/home/mostafa/Downloads/task2/cursor.c
+	"cursor.h"
+	"platform.h"
+	<stdio.h>
+
+1763102630 /home/mostafa/Downloads/task2/cursor.h
+
+1763102630 source:/home/mostafa/Downloads/task2/draw.c
+	"draw.h"
+	"cursor.h"
+	"color.h"
+	"screen.h"
+	<stdio.h>
+
+1763102630 /home/mostafa/Downloads/task2/draw.h
+	"color.h"
+
+1763102630 /home/mostafa/Downloads/task2/screen.h
+
+1763165305 source:/home/mostafa/Downloads/task2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"draw.h"
+	"screen.h"
+
+1763103092 source:/home/mostafa/Downloads/task2/screen.c
+	"screen.h"
+	"platform.h"
+	<stdio.h>
+	<stdlib.h>
+
+1763165305 source:/home/mostafa/Downloads/task2/input.c
+	"input.h"
+	"platform.h"
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<conio.h>
+
+1763165305 /home/mostafa/Downloads/task2/input.h
+
+1763165305 /home/mostafa/Downloads/task2/menu.h
+	"color.h"
+
+1763165492 source:/home/mostafa/Downloads/task2/menu.c
+	"menu.h"
+	"screen.h"
+	"draw.h"
+	"input.h"
+	"cursor.h"
+	<stdio.h>
+	<string.h>
 

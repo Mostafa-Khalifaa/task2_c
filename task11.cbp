@@ -43,8 +43,20 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="draw.h" />
+		<Unit filename="input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="input.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="platform.h" />
 		<Unit filename="screen.c">

@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "menu.h"
 #include "draw.h"
 #include "screen.h"
 
 int main()
 {
-    clearScreen();
-    showInitial(10, 8, "Hello World!", RED);
-    delaySeconds(2);
+  // Initialize input system (important for Linux)
+    initInput();
 
-    showStatementScreen();
-    getchar();
+    // Run the main menu
+    runMainMenu();
 
-    clearScreen();
+    // Restore input settings before exit
+    restoreInput();
     return 0;
 }
