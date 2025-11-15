@@ -1,0 +1,7 @@
+color.o cursor.o draw.o main.o screen.o
+task11.exe
+task11
+task11.depend
+task11.layout
+bin/
+obj/
