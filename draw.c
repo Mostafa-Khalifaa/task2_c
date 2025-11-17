@@ -9,6 +9,7 @@ void drawText(int x, int y, const char *text, Color color) {
     setColor(color);
     printf("%s", text);
     resetColor();
+    //تضمن إن كل النص اللي كتبناه يظهر فورًا على الشاشة.
     fflush(stdout);
 }
 

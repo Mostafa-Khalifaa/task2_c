@@ -18,7 +18,8 @@ static const char* menuItems[MAX_MENU_ITEMS] = {
 void initMenu(void) {
     clearScreen();
 }
-
+// Draws one button in the menu (with border and centered text)
+// isSelected = 1 → highlight border color
 void drawMenuButton(int x, int y, const char* text, int isSelected) {
     Color borderColor = isSelected ? BLUE : WHITE;
     Color textColor = WHITE;
@@ -77,30 +78,33 @@ void drawMenu(int selectedItem) {
     drawText(10, 22, "Use UP/DOWN arrows to navigate, Enter to select, ESC/Home to go back", YELLOW);
 }
 
+// Handles keyboard navigation (UP/DOWN/ENTER/ESC)
 MenuItem handleMenuInput(void) {
-    int selectedItem = 0;
-    drawMenu(selectedItem);
+int selectedItem = 0; // Default selected menu item
+drawMenu(selectedItem);
 
-    while (1) {
-        int key = getKeyPress();
 
-        if (key == KEY_UP) {
-            selectedItem--;
-            if (selectedItem < 0) selectedItem = MAX_MENU_ITEMS - 1;
-            drawMenu(selectedItem);
-        }
-        else if (key == KEY_DOWN) {
-            selectedItem++;
-            if (selectedItem >= MAX_MENU_ITEMS) selectedItem = 0;
-            drawMenu(selectedItem);
-        }
-        else if (key == KEY_ENTER) {
-            return (MenuItem)selectedItem;
-        }
-        else if (key == KEY_ESC || key == KEY_HOME) {
-            return MENU_EXIT;
-        }
-    }
+while (1) {
+int key = getKeyPress(); // Read key press
+
+
+if (key == KEY_UP) {
+selectedItem--; // Move selection up
+if (selectedItem < 0) selectedItem = MAX_MENU_ITEMS - 1; // Wrap to bottom
+drawMenu(selectedItem);
+}
+else if (key == KEY_DOWN) {
+selectedItem++; // Move selection down
+if (selectedItem >= MAX_MENU_ITEMS) selectedItem = 0; // Wrap to top
+drawMenu(selectedItem);
+}
+else if (key == KEY_ENTER) {
+return (MenuItem)selectedItem; // Confirm selection
+}
+else if (key == KEY_ESC || key == KEY_HOME) {
+return MENU_EXIT; // Exit menu
+}
+}
 }
 
 void handleNewOption(void) {
@@ -112,9 +116,10 @@ void handleNewOption(void) {
 
     moveCursor(26, 4);
     setColor(WHITE);
-    fgets(message, sizeof(message), stdin);
+    fgets(message, sizeof(message), stdin); // Read user input
 
     // Remove newline
+    //be sure the ENTER not go with text
     size_t len = strlen(message);
     if (len > 0 && message[len - 1] == '\n') {
         message[len - 1] = '\0';
@@ -137,7 +142,7 @@ void handleDisplayOption(void) {
     drawText(5, 9, "Multiple lines of content can be displayed here.", YELLOW);
     drawText(5, 12, "Press Enter or ESC to return to menu...", MAGENTA);
     resetColor();
-
+// Wait until user presses a valid exit key
     while (1) {
         int key = getKeyPress();
         if (key == KEY_ENTER || key == KEY_ESC || key == KEY_HOME) {
@@ -145,7 +150,7 @@ void handleDisplayOption(void) {
         }
     }
 }
-
+// Runs the menu loop until user chooses Exit
 void runMainMenu(void) {
     while (1) {
         MenuItem selected = handleMenuInput();
